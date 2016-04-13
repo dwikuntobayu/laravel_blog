@@ -23,4 +23,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    public static function valid($id='', $pass_up='') {
+      return array(
+        'email' => 'required|email|unique:users,email'.($id ? ",$id" : ''),
+        'name' => 'required|min: 6|unique:users,name'.($id ? ",$id" : ''),
+        'password' => ($pass_up ? '' : "required|min: 8|confirmed")
+      );
+    }
 }

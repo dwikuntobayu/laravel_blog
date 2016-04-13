@@ -10,10 +10,10 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
+// ini untuk setup default homepage
+Route::get('/', 'ArticlesController@index');
+// ini untuk setup CRUD path url
 Route::resource('articles', 'ArticlesController');
 Route::resource('comments', 'CommentsController');
+Route::resource('products', 'ProductsController');
+Route::resource('users', 'UsersController', ['except' => array('index', 'destroy')]);

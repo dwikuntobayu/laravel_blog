@@ -8,7 +8,7 @@
         <span class="icon-bar"/>
         <span class="icon-bar"/>
       </button>
-      <a href="#" class = "navbar-brand">Training Bootstrap</a>
+      {!! link_to('/', 'Training Bootstrap', ['class'=>'navbar-brand']) !!}
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
@@ -16,10 +16,10 @@
           {!! link_to('articles', 'Article') !!}
         </li>
         <li>
-          <a href="#">Profile</a>
+          {!! link_to('users/create', 'Register') !!}
         </li>
         <li>
-          <a href="#">Contact</a>
+          <a>Login</a>
         </li>
       </ul>
     </div>
