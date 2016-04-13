@@ -18,9 +18,15 @@
         <li>
           {!! link_to('users/create', 'Register') !!}
         </li>
+        @if (Auth::check())
         <li>
-          <a>Login</a>
+          {!! link_to('/logout', 'Logout') !!}
         </li>
+        @else
+        <li>
+          {!! link_to('sessions/create', 'Login') !!}
+        </li>
+        @endif
       </ul>
     </div>
   </div>

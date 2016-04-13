@@ -17,3 +17,5 @@ Route::resource('articles', 'ArticlesController');
 Route::resource('comments', 'CommentsController');
 Route::resource('products', 'ProductsController');
 Route::resource('users', 'UsersController', ['except' => array('index', 'destroy')]);
+Route::resource('sessions', 'SessionsController', ['only' => array('create', 'store')]);
+Route::get('/logout', 'SessionsController@logout');

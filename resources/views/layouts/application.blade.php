@@ -41,6 +41,7 @@
     <script src="/js/ripples.js"></script>
     <script>
       $.material.init();
+      $.material.checkbox();
     </script>
   </body>
 </html>

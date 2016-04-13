@@ -7,6 +7,10 @@ use App\Article;
 use Validator, Session, Redirect;
 
 class ArticlesController extends Controller {
+  public function __construct() {
+    $this->middleware('auth');
+  }
+
   function index() {
     $articles = Article::all();
     return view('articles.index')
