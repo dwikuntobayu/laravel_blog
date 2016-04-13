@@ -14,4 +14,8 @@ class Article extends Model
       'content' => 'required|min:100|unique:articles,content'.($id ? ",$id" : '')
     );
   }
+
+  public function comments() {
+    return $this->hasMany('App\Comment', 'article_id');
+  }
 }
